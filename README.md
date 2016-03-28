@@ -1,2 +1,2 @@
 # TwitterLikeNavigation
-a navigation page like twitter which can left/right swipe
+a navigation page like twitter which can be swiped
