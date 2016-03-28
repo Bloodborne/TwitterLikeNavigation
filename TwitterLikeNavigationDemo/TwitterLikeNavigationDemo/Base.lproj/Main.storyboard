@@ -13,36 +13,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gjZ-Ew-0At">
-                            <size key="itemSize" width="187" height="96"/>
+                            <size key="itemSize" width="241" height="153"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="zTp-tK-qGk">
-                                <rect key="frame" x="0.0" y="64" width="187" height="96"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="zTp-tK-qGk" customClass="CollectionViewCell">
+                                <rect key="frame" x="0.0" y="64" width="241" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="241" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVM-7y-ueW">
-                                            <rect key="frame" x="0.0" y="0.0" width="187" height="96"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q2e-8O-k3G">
+                                            <rect key="frame" x="0.0" y="0.0" width="241" height="153"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </tableView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="bVM-7y-ueW" firstAttribute="top" secondItem="zTp-tK-qGk" secondAttribute="top" id="3Rq-g6-3rr"/>
-                                    <constraint firstAttribute="bottom" secondItem="bVM-7y-ueW" secondAttribute="bottom" id="5wY-n6-v3u"/>
-                                    <constraint firstItem="bVM-7y-ueW" firstAttribute="leading" secondItem="zTp-tK-qGk" secondAttribute="leading" id="WZq-CV-iqi"/>
-                                    <constraint firstAttribute="trailing" secondItem="bVM-7y-ueW" secondAttribute="trailing" id="YrJ-Mk-cbS"/>
+                                    <constraint firstItem="q2e-8O-k3G" firstAttribute="leading" secondItem="zTp-tK-qGk" secondAttribute="leading" id="7m7-Pq-Rze"/>
+                                    <constraint firstAttribute="trailing" secondItem="q2e-8O-k3G" secondAttribute="trailing" id="O1n-A6-KB6"/>
+                                    <constraint firstItem="q2e-8O-k3G" firstAttribute="top" secondItem="zTp-tK-qGk" secondAttribute="top" id="Xg0-Wv-k9Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="q2e-8O-k3G" secondAttribute="bottom" id="XvC-8b-WvY"/>
                                 </constraints>
-                                <size key="customSize" width="187" height="96"/>
+                                <size key="customSize" width="241" height="153"/>
+                                <connections>
+                                    <outlet property="tableView" destination="q2e-8O-k3G" id="e3c-dO-K61"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

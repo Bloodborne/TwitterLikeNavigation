@@ -22,13 +22,12 @@ static int const kPageNumber = 5;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSInteger r = arc4random() % 255;
-    NSInteger g = arc4random() % 255;
-    NSInteger b = arc4random() % 255;
-    
-    self.collectionView.backgroundColor = [UIColor colorWithRed:(CGFloat)r/255 green:(CGFloat)g/255 blue:(CGFloat)b/255 alpha:1];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeBottom;
     
     self.collectionView.pagingEnabled = YES;
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
     //self.collectionView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*kPageNumber,[UIScreen mainScreen].bounds.size.height);
     // Uncomment the following line to preserve selection between presentations
@@ -56,16 +55,6 @@ static int const kPageNumber = 5;
     self.title = @"Demo";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -79,12 +68,6 @@ static int const kPageNumber = 5;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    NSInteger r = arc4random() % 255;
-    NSInteger g = arc4random() % 255;
-    NSInteger b = arc4random() % 255;
-
-    cell.backgroundView.backgroundColor = [UIColor colorWithRed:r green:g blue:b alpha:1];
     
     return cell;
 }
@@ -115,8 +98,6 @@ static int const kPageNumber = 5;
 {
     return UIEdgeInsetsZero;
 }
-
-
 
 #pragma mark - Collection view rotation
 

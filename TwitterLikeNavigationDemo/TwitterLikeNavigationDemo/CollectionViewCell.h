@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectionViewCell : UICollectionViewCell
+@interface CollectionViewCell : UICollectionViewCell <UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
