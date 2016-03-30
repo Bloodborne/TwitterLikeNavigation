@@ -7,6 +7,7 @@
 //
 
 #import "CollectionViewController.h"
+#import "Masonry/Masonry.h"
 
 @interface CollectionViewController () <UICollectionViewDelegateFlowLayout>
 
@@ -44,13 +45,29 @@ static int const kPageNumber = 5;
 {
     UINavigationBar *bar = self.navigationController.navigationBar;
     
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, bar.bounds.size.height - 5, bar.bounds.size.width, 0)];
+    self.pageControl = [[UIPageControl alloc] init];
     self.pageControl.numberOfPages = kPageNumber;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     
     bar.backgroundColor = [UIColor lightGrayColor];
     bar.opaque = YES;
-    [bar addSubview:self.pageControl];
+    
+    UIView *pageControlView = ({
+        UIView *view = [UIView new];
+        [view addSubview:self.pageControl];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.equalTo(self.pageControl);
+        }];
+        
+        [bar addSubview:view];
+        
+        [view mas_makeConstraints:^(MASConstraintMaker *make) { 
+            make.centerX.equalTo(bar);
+            make.bottom.equalTo(bar).offset(-4);
+        }];
+        
+        view;
+    });
     
     self.title = @"Demo";
 }
